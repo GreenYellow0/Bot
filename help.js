@@ -20,3 +20,4 @@ function displayHelpEmbed() {
     chatBox.appendChild(embedElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+ 

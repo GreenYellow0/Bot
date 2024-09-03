@@ -36,3 +36,4 @@ function respondTo8Ball() {
     const response = responses[Math.floor(Math.random() * responses.length)];
     displayMessage('Bot', response);
 }
+ 
