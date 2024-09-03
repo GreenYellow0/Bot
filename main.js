@@ -21,6 +21,8 @@ function processInput() {
             displayHelpEmbed();
         } else if (command === '/greet') {
             respondToGreet(args);
+        } else if (command === '/nsfwtime') {
+            respondToNsfwTime();        
         } else {
             displayMessage('Bot', 'Onbekend commando.');
         }
@@ -43,13 +45,14 @@ function displayMessage(sender, message) {
     }
 
     if (sender === 'Bot') {
-        messageElement.innerHTML = `<img src="images/image.png" alt="Bot" /> <strong>${sender}:</strong> ${message}`;
+        messageElement.innerHTML = `<img src="images/image.png" alt="Bot" class="bot-icon" /> <strong>${sender}:</strong> ${message}`;
     } else {
         messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
     }
 
     chatBox.appendChild(messageElement);
 }
+
 
 
 // Zorg ervoor dat de embed direct wordt weergegeven bij het laden van de pagina
