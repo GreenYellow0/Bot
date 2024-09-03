@@ -1,30 +1,30 @@
 [
     {
-        "keywords": ["hallo", "hi", "hoi", "hey"],
+        "keywords": ["hallo", "hi", "hoi", "hey", "hallo daar", "goede morgen", "goede middag", "goede avond"],
         "response": "Hallo! Hoe kan ik je helpen vandaag?"
     },
     {
-        "keywords": ["hoe gaat het", "hoe gaat het met je", "hoe gaat het met jou"],
+        "keywords": ["hoe gaat het", "hoe gaat het met je", "hoe gaat het met jou", "alles goed", "hoe voel je je", "hoe is het", "hoe gaat het met jou vandaag"],
         "response": "Het gaat goed, dank je! Hoe gaat het met jou?"
     },
     {
-        "keywords": ["wat is je naam", "wie ben jij", "je naam"],
+        "keywords": ["wat is je naam", "wie ben jij", "je naam", "hoe heet je", "wat ben jij", "hoe noem jij jezelf", "wie ben jij chatbot", "hoe heet jij"],
         "response": "Ik ben een eenvoudige chatbot die hier is om te helpen!"
     },
     {
-        "keywords": ["wat kun je doen", "wat doe je", "wat kan jij"],
+        "keywords": ["wat kun je doen", "wat doe je", "wat kan jij", "waar ben je goed in", "wat zijn je vaardigheden", "wat is jouw functie", "wat zijn je mogelijkheden"],
         "response": "Ik kan eenvoudige commando's uitvoeren zoals /8ball en /wheel. Probeer het eens!"
     },
     {
-        "keywords": ["bedankt", "dank je", "thanks"],
+        "keywords": ["bedankt", "dank je", "thanks", "dank u", "dank je wel", "dankjewel", "bedankt hoor", "veel dank"],
         "response": "Graag gedaan! Als ik ergens anders mee kan helpen, laat het me weten."
     },
     {
-        "keywords": ["hoe laat is het", "wat is de tijd", "tijd", "klok"],
+        "keywords": ["hoe laat is het", "wat is de tijd", "wat tijd is het", "hoe laat", "tijdstip", "hoeveel uur is het"],
         "response": "TIME_RESPONSE"  
     },
     {
-        "keywords": ["tot ziens", "doei", "bye"],
+        "keywords": ["tot ziens", "doei", "bye", "vaarwel", "later", "tot later", "ik ga weg", "ik ben weg", "tot de volgende keer"],
         "response": "Tot ziens! Fijne dag verder!"
     }
 ]
