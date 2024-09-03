@@ -13,12 +13,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 750px; /* Vergroot de breedte van de chatbox */
-    max-width: 100%;
+    width: 100%; /* Zorg dat het op alle schermen werkt */
+    max-width: 750px; /* Maximaal op grotere schermen */
 }
 
 #chat-box {
-    height: 650px; /* Vergroot de hoogte van de chatbox */
+    height: 60vh; /* Zorgt ervoor dat het goed schaalt op kleinere schermen */
     overflow-y: scroll;
     border: 1px solid #ccc;
     padding: 10px;
@@ -46,10 +46,11 @@ body {
 }
 
 #user-input {
-    width: calc(100% - 70px);
+    width: calc(100% - 80px);
     padding: 10px;
     border: 1px solid #ccc; 
     border-radius: 5px;
+    font-size: 16px; /* Pas aan voor een betere mobiele ervaring */
 }
 
 button {
@@ -59,13 +60,12 @@ button {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px; /* Pas aan voor een betere mobiele ervaring */
 }
 
 button:hover {
     background-color: #218838;
 }
-
-
 
 .embed {
     border-left: 4px solid #7289da; /* Discord blauw aan de zijkant */
@@ -92,8 +92,8 @@ button:hover {
 }
 
 .embed-icon {
-    width: 50px;  /* Pas de grootte aan naar wens */
-    height: 50px; /* Pas de grootte aan naar wens */
+    width: 40px;  /* Kleinere grootte voor mobiel */
+    height: 40px; /* Kleinere grootte voor mobiel */
     margin-left: 10px;
 }
 
@@ -102,4 +102,14 @@ button:hover {
     height: 20px; /* Pas de grootte aan naar wens */
     margin-right: 5px;
     vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+    #chat-box {
+        height: 50vh; /* Schaal de hoogte verder naar beneden voor kleinere schermen */
+    }
+
+    #user-input, button {
+        font-size: 14px; /* Iets kleinere tekst voor zeer kleine schermen */
+    }
 }
