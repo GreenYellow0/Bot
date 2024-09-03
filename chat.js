@@ -24,6 +24,10 @@ function respondToChat(message) {
             response: 'Graag gedaan! Als ik ergens anders mee kan helpen, laat het me weten.'
         },
         {
+            keywords: ['hoe laat is het', 'wat is de tijd', 'tijd', 'klok'],
+            response: 'Het is momenteel ' + new Date().toLocaleTimeString() + '.'
+        },
+        {
             keywords: ['tot ziens', 'doei', 'bye'],
             response: 'Tot ziens! Fijne dag verder!'
         }
