@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.chat-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 750px; /* Vergroot de breedte van de chatbox */
+    max-width: 100%;
+}
+
+#chat-box {
+    height: 650px; /* Vergroot de hoogte van de chatbox */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin: 10px 0; /* Voeg wat ruimte toe tussen berichten */
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.message.you {
+    text-align: right;
+    color: #0022ff; /* Kleur voor jouw berichten */
+}
+
+.message.bot {
+    text-align: left;
+    color: #0c7ffa; /* Kleur voor de berichten van de bot */
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+
+.embed {
+    border-left: 4px solid #7289da; /* Discord blauw aan de zijkant */
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.embed-title {
+    font-weight: bold;
+    color: #7289da;
+    margin-bottom: 5px;
+}
+
+.embed-content {
+    color: #333;
+}
