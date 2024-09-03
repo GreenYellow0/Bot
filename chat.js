@@ -1,58 +1,37 @@
-function respondToChat(message) {
-    const lowerMessage = message.toLowerCase();
+let responses = []; // Lege array voor de geladen responses
 
-    // Definieer enkele eenvoudige reacties gebaseerd op sleutelwoorden of zinnen
-    const responses = [
-        {
-            keywords: ['hallo', 'hi', 'hoi', 'hey'],
-            response: 'Hallo! Hoe kan ik je helpen vandaag?'
-        },
-        {
-            keywords: ['hoe gaat het', 'hoe gaat het met je', 'hoe gaat het met jou'],
-            response: 'Het gaat goed, dank je! Hoe gaat het met jou?'
-        },
-        {
-            keywords: ['wat is je naam', 'wie ben jij', 'je naam'],
-            response: 'Ik ben een eenvoudige chatbot die hier is om te helpen!'
-        },
-        {
-            keywords: ['wat kun je doen', 'wat doe je', 'wat kan jij'],
-            response: 'Ik kan eenvoudige commando\'s uitvoeren zoals /8ball en /wheel. Probeer het eens!'
-        },
-        {
-            keywords: ['bedankt', 'dank je', 'thanks'],
-            response: 'Graag gedaan! Als ik ergens anders mee kan helpen, laat het me weten.'
-        },
-        {
-            keywords: ['hoe laat is het', 'wat is de tijd', 'tijd', 'klok'],
-            response: 'Het is momenteel ' + new Date().toLocaleTimeString() + '.'
-        },
-        {
-            keywords: ['tot ziens', 'doei', 'bye'],
-            response: 'Tot ziens! Fijne dag verder!'
-        }
-    ];
+// Laad de responses vanuit dataset1.json
+fetch('dataset1.json')
+    .then(response => response.json())
+    .then(data => {
+        responses = data;
+    })
+    .catch(error => console.error('Error loading responses:', error));
 
-    // Bepaal een drempelwaarde voor acceptabele overeenkomsten
-    const threshold = 3; // Hoe lager, hoe strikter de matching
-
-    // Zoek naar een passend antwoord met fuzzy matching
-    let response = 'Sorry, dat begrijp ik niet. Voor meer info gebruik /help.';
-
-    for (const item of responses) {
-        for (const keyword of item.keywords) {
-            if (getLevenshteinDistance(lowerMessage, keyword) <= threshold) {
-                response = item.response;
+    function respondToChat(message) {
+        const lowerMessage = message.toLowerCase();
+    
+        const threshold = 3; // Hoe lager, hoe strikter de matching
+    
+        let response = 'Sorry, dat begrijp ik niet. Voor meer info gebruik /help.';
+    
+        for (const item of responses) {
+            for (const keyword of item.keywords) {
+                if (getLevenshteinDistance(lowerMessage, keyword) <= threshold) {
+                    response = item.response === "TIME_RESPONSE" 
+                        ? "Het is momenteel " + new Date().toLocaleTimeString() + "."
+                        : item.response;
+                    break;
+                }
+            }
+            if (response !== 'Sorry, dat begrijp ik niet. Voor meer info gebruik /help.') {
                 break;
             }
         }
-        if (response !== 'Sorry, dat begrijp ik niet. Voor meer info gebruik /help.') {
-            break;
-        }
+    
+        displayMessage('Bot', response);
     }
-
-    displayMessage('Bot', response);
-}
+    
 
 // Functie om de Levenshtein-afstand tussen twee strings te berekenen
 function getLevenshteinDistance(a, b) {
@@ -81,4 +60,3 @@ function getLevenshteinDistance(a, b) {
 
     return matrix[b.length][a.length];
 }
- 

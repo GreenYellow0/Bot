@@ -1,0 +1,30 @@
+[
+    {
+        "keywords": ["hallo", "hi", "hoi", "hey"],
+        "response": "Hallo! Hoe kan ik je helpen vandaag?"
+    },
+    {
+        "keywords": ["hoe gaat het", "hoe gaat het met je", "hoe gaat het met jou"],
+        "response": "Het gaat goed, dank je! Hoe gaat het met jou?"
+    },
+    {
+        "keywords": ["wat is je naam", "wie ben jij", "je naam"],
+        "response": "Ik ben een eenvoudige chatbot die hier is om te helpen!"
+    },
+    {
+        "keywords": ["wat kun je doen", "wat doe je", "wat kan jij"],
+        "response": "Ik kan eenvoudige commando's uitvoeren zoals /8ball en /wheel. Probeer het eens!"
+    },
+    {
+        "keywords": ["bedankt", "dank je", "thanks"],
+        "response": "Graag gedaan! Als ik ergens anders mee kan helpen, laat het me weten."
+    },
+    {
+        "keywords": ["hoe laat is het", "wat is de tijd", "tijd", "klok"],
+        "response": "TIME_RESPONSE"  
+    },
+    {
+        "keywords": ["tot ziens", "doei", "bye"],
+        "response": "Tot ziens! Fijne dag verder!"
+    }
+]
