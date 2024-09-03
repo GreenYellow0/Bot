@@ -19,8 +19,8 @@ function processInput() {
             respondToWheel(args);
         } else if (command === '/help') {
             displayHelpEmbed();
-        } else if (command === '/greet') {  // Nieuw commando
-            respondToGreet(args);  // Aparte functie voor het commando
+        } else if (command === '/greet') {
+            respondToGreet(args);
         } else {
             displayMessage('Bot', 'Onbekend commando.');
         }
@@ -42,13 +42,23 @@ function displayMessage(sender, message) {
         messageElement.classList.add('bot');
     }
 
-    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    if (sender === 'Bot') {
+        messageElement.innerHTML = `<img src="images/image.png" alt="Bot" /> <strong>${sender}:</strong> ${message}`;
+    } else {
+        messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    }
+
     chatBox.appendChild(messageElement);
 }
+
+
+// Zorg ervoor dat de embed direct wordt weergegeven bij het laden van de pagina
+window.addEventListener('DOMContentLoaded', (event) => {
+    displayHelpEmbed(); // Dit roept de functie aan zodra de pagina volledig geladen is
+});
 
 document.getElementById('user-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
         processInput();
     }
 });
- 

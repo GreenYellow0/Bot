@@ -84,3 +84,22 @@ button:hover {
 .embed-content {
     color: #333;
 }
+
+.embed-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.embed-icon {
+    width: 50px;  /* Pas de grootte aan naar wens */
+    height: 50px; /* Pas de grootte aan naar wens */
+    margin-left: 10px;
+}
+
+.message.bot img {
+    width: 20px;  /* Pas de grootte aan naar wens */
+    height: 20px; /* Pas de grootte aan naar wens */
+    margin-right: 5px;
+    vertical-align: middle;
+}
